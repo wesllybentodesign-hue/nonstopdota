@@ -906,6 +906,435 @@
   #toast.error   { border-color: rgba(255,76,76,0.5);  color: #ff4c4c; }
 
   /* ── MOBILE responsive ── */
+
+
+
+
+  /* ── HALL DA FAMA ── */
+  .hf-eyebrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 6px;
+    color: var(--orange);
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+  .hf-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 3px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hf-title span { color: var(--orange); }
+  .hf-intro {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(232,224,208,0.4);
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+  }
+
+  .hf-section {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hf-section::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(232,224,208,0.08);
+  }
+  .hf-section.gold { color: #ffd700; }
+  .hf-section.red  { color: #ff4c4c; }
+
+  .hf-card {
+    background: var(--gray);
+    border: 1px solid rgba(232,224,208,0.07);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+  .hf-card:hover { border-color: rgba(255,61,0,0.2); }
+  .hf-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+  }
+  .hf-card.tier-s::before  { background: #ffd700; }
+  .hf-card.tier-a::before  { background: #ff9900; }
+  .hf-card.tier-b::before  { background: var(--orange); }
+  .hf-card.tier-bad::before{ background: #ff4c4c; }
+  .hf-card.tier-rip::before{ background: #8b0000; }
+
+  .hf-card-inner {
+    padding: 18px 20px 18px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .hf-rank {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 52px;
+    text-align: center;
+  }
+  .hf-rank.gold { color: #ffd700; text-shadow: 0 0 20px rgba(255,215,0,0.4); }
+  .hf-rank.silver { color: #c0c0c0; }
+  .hf-rank.bronze { color: #cd7f32; }
+  .hf-rank.red { color: #ff4c4c; }
+  .hf-rank.skull { color: #8b0000; font-size: 2.2rem; }
+
+  .hf-body { flex: 1; min-width: 0; }
+
+  .hf-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .hf-headline span { color: var(--orange); }
+
+  .hf-subline {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: rgba(232,224,208,0.35);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .hf-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(232,224,208,0.6);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .hf-text b { color: var(--white); }
+  .hf-text .fire { color: #ff9900; }
+  .hf-text .cold { color: #4c9fff; }
+
+  .hf-stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .hf-stat {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .hf-stat.pos { background: rgba(76,255,122,0.1); color: #4cff7a; border: 1px solid rgba(76,255,122,0.2); }
+  .hf-stat.neg { background: rgba(255,76,76,0.1);  color: #ff4c4c; border: 1px solid rgba(255,76,76,0.2); }
+  .hf-stat.neu { background: rgba(255,61,0,0.08);  color: var(--orange); border: 1px solid rgba(255,61,0,0.2); }
+  .hf-stat.gld { background: rgba(255,215,0,0.08); color: #ffd700; border: 1px solid rgba(255,215,0,0.2); }
+
+  .hf-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    flex-shrink: 0;
+    text-align: center;
+    min-width: 80px;
+  }
+  .hf-number.gold  { color: #ffd700; }
+  .hf-number.green { color: #4cff7a; }
+  .hf-number.red   { color: #ff4c4c; }
+  .hf-number.orange{ color: var(--orange); }
+
+  .hf-number-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 3px;
+    color: rgba(232,224,208,0.3);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+
+  .hf-explain {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    color: rgba(232,224,208,0.4);
+    background: rgba(255,61,0,0.04);
+    border-left: 2px solid rgba(255,61,0,0.2);
+    padding: 8px 12px;
+    margin: 8px 0 10px;
+  }
+  .hf-explain strong { color: rgba(255,61,0,0.7); }
+
+  .hf-divider {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 8px;
+    color: rgba(232,224,208,0.1);
+    padding: 16px 0;
+    text-transform: uppercase;
+  }
+
+  @keyframes hfPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .hf-live {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: hfPulse 1.5s infinite;
+    vertical-align: middle;
+  }
+
+  /* ── HIGHLIGHTS ── */
+  .hl-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+  .hl-section-title span { color: var(--orange); }
+
+  .hl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
+  .hl-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px; }
+
+  .hl-card {
+    background: var(--gray);
+    border: 1px solid rgba(232,224,208,0.07);
+    padding: 16px 18px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .hl-card:hover { border-color: rgba(255,61,0,0.3); }
+  .hl-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+  .hl-card.orange::before { background: var(--orange); }
+  .hl-card.green::before  { background: #4cff7a; }
+  .hl-card.red::before    { background: #ff4c4c; }
+  .hl-card.gold::before   { background: #ffd700; }
+  .hl-card.blue::before   { background: #378add; }
+  .hl-card.gray::before   { background: rgba(232,224,208,0.2); }
+
+  .hl-icon { font-size: 1.4rem; margin-bottom: 8px; display: block; }
+  .hl-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 3px;
+    color: rgba(232,224,208,0.35);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .hl-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .hl-value.orange { color: var(--orange); }
+  .hl-value.green  { color: #4cff7a; }
+  .hl-value.red    { color: #ff4c4c; }
+  .hl-value.gold   { color: #ffd700; }
+  .hl-value.blue   { color: #378add; }
+  .hl-desc {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(232,224,208,0.45);
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+  .hl-desc b { color: rgba(232,224,208,0.75); }
+
+  .hl-story {
+    background: var(--gray);
+    border: 1px solid rgba(232,224,208,0.07);
+    padding: 18px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+  .hl-story:hover { border-color: rgba(255,61,0,0.25); }
+  .hl-story-icon { font-size: 1.8rem; flex-shrink: 0; margin-top: 2px; }
+  .hl-story-body { flex: 1; }
+  .hl-story-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .hl-story-title span { color: var(--orange); }
+  .hl-story-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(232,224,208,0.5);
+    line-height: 1.5;
+  }
+  .hl-story-text b { color: rgba(232,224,208,0.85); }
+  .hl-badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+  .hl-badge.pos { background: rgba(76,255,122,0.1); color: #4cff7a; }
+  .hl-badge.neg { background: rgba(255,76,76,0.1); color: #ff4c4c; }
+  .hl-badge.neu { background: rgba(255,61,0,0.1); color: var(--orange); }
+
+  .hl-divider {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    color: rgba(232,224,208,0.15);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 12px 0 16px;
+  }
+
+  @media (max-width: 700px) {
+    .hl-grid  { grid-template-columns: repeat(2, 1fr); }
+    .hl-grid-2 { grid-template-columns: 1fr; }
+  }
+
+  /* ── RESULTS TABS ── */
+  .res-tab {
+    background: none;
+    border: 1px solid rgba(232,224,208,0.12);
+    color: rgba(232,224,208,0.5);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+  }
+  .res-tab:hover { border-color: var(--orange); color: var(--orange); }
+  .res-tab.active { background: var(--orange); color: var(--black); border-color: var(--orange); }
+
+  /* ── PODIUM ── */
+  .podium-card {
+    background: var(--gray);
+    border: 1px solid rgba(232,224,208,0.08);
+    padding: 16px 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .podium-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .podium-card.p1::before { background: #ffd700; }
+  .podium-card.p2::before { background: #c0c0c0; }
+  .podium-card.p3::before { background: #cd7f32; }
+  .podium-card.p4::before { background: rgba(232,224,208,0.15); }
+  .podium-medal { font-size: 1.8rem; margin-bottom: 6px; }
+  .podium-place { font-family: 'Share Tech Mono', monospace; font-size: 0.55rem; letter-spacing: 3px; color: rgba(232,224,208,0.3); text-transform: uppercase; margin-bottom: 4px; }
+  .podium-tname { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 2px; color: var(--white); }
+  .podium-card.p1 .podium-tname { color: #ffd700; }
+  .podium-card.p2 .podium-tname { color: #c0c0c0; }
+  .podium-card.p3 .podium-tname { color: #cd7f32; }
+  .podium-pts { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--orange); margin-top: 2px; }
+  .podium-card.p1 .podium-pts { color: #ffd700; }
+  .podium-card.p2 .podium-pts { color: #c0c0c0; }
+  .podium-card.p3 .podium-pts { color: #cd7f32; }
+  .podium-record { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; letter-spacing: 2px; color: rgba(232,224,208,0.3); margin-top: 4px; }
+  .podium-players { font-family: 'Share Tech Mono', monospace; font-size: 0.55rem; color: rgba(232,224,208,0.25); margin-top: 6px; line-height: 1.7; }
+
+  /* match history phase badge */
+  .phase-dot { display: inline-block; font-family: 'Share Tech Mono', monospace; font-size: 0.55rem; letter-spacing: 2px; padding: 2px 6px; border-radius: 3px; }
+  .phase-dot.f1 { background: rgba(55,138,221,0.15); color: #378add; }
+  .phase-dot.f2 { background: rgba(255,61,0,0.12); color: var(--orange); }
+
+  /* ── ELENCOS PAGE ── */
+  .elencos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .elenco-card { background: var(--gray); border: 1px solid rgba(232,224,208,0.08); position: relative; overflow: hidden; }
+  .elenco-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+  .elenco-header { padding: 18px 24px 14px; border-bottom: 1px solid rgba(232,224,208,0.06); display: flex; align-items: center; justify-content: space-between; }
+  .elenco-team-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 3px; color: var(--orange); }
+  .elenco-phases { display: grid; grid-template-columns: 1fr 1fr; }
+  .elenco-phase { padding: 16px 20px; }
+  .elenco-phase:first-child { border-right: 1px solid rgba(232,224,208,0.06); }
+  .elenco-phase-title { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; letter-spacing: 4px; color: rgba(232,224,208,0.35); text-transform: uppercase; margin-bottom: 12px; }
+  .elenco-player { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(232,224,208,0.04); }
+  .elenco-player:last-child { border-bottom: none; }
+  .elenco-player-name { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 2px; color: var(--white); }
+  .elenco-player-name.subbed-out { color: rgba(255,76,76,0.5); text-decoration: line-through; }
+  .elenco-player-name.subbed-in  { color: #4cff7a; }
+  .elenco-player-role { font-family: 'Share Tech Mono', monospace; font-size: 0.55rem; letter-spacing: 2px; color: rgba(232,224,208,0.3); text-transform: uppercase; }
+  .sub-tag { font-family: 'Share Tech Mono', monospace; font-size: 0.55rem; letter-spacing: 1px; padding: 2px 6px; border-radius: 3px; }
+  .sub-tag.out { background: rgba(255,76,76,0.1); color: rgba(255,76,76,0.7); }
+  .sub-tag.inn { background: rgba(76,255,122,0.1); color: #4cff7a; }
+  .elenco-legend { display: flex; gap: 16px; padding: 10px 20px; border-top: 1px solid rgba(232,224,208,0.04); }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; letter-spacing: 2px; color: rgba(232,224,208,0.3); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── TOOLTIP ── */
+  .tt-wrap { position: relative; display: inline-block; }
+  .tt-box {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gray);
+    border: 1px solid rgba(255,61,0,0.4);
+    padding: 12px 16px;
+    z-index: 999;
+    min-width: 200px;
+    pointer-events: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  }
+  .tt-box::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(255,61,0,0.4);
+  }
+  .tt-wrap:hover .tt-box { display: block; }
+  .tt-team { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 2px; color: var(--orange); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,61,0,0.2); }
+  .tt-phase { font-family: 'Share Tech Mono', monospace; font-size: 0.55rem; letter-spacing: 3px; color: rgba(232,224,208,0.35); text-transform: uppercase; margin: 8px 0 4px; }
+  .tt-player { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 1px; color: var(--white); padding: 2px 0; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .tt-player.in  { color: #4cff7a; }
+  .tt-player.out { color: rgba(255,76,76,0.6); text-decoration: line-through; }
+
+  @media (max-width: 700px) {
+    .elencos-grid { grid-template-columns: 1fr; }
+    .elenco-phases { grid-template-columns: 1fr; }
+    .elenco-phase:first-child { border-right: none; border-bottom: 1px solid rgba(232,224,208,0.06); }
+  }
+
   @media (max-width: 700px) {
     nav { padding: 12px 16px; }
     .nav-logo { font-size: 1rem; }
@@ -944,6 +1373,7 @@
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('home')">Início</button>
     <button class="nav-tab" onclick="showPage('teams')">Times</button>
+    <button class="nav-tab" onclick="showPage('elencos')">Elencos</button>
     <button class="nav-tab" onclick="showPage('results')">Resultados</button>
   </div>
 </nav>
@@ -965,6 +1395,7 @@
     <div class="hero-cta">
       <button class="btn-primary" onclick="showPage('teams')">Ver Times</button>
       <button class="btn-secondary" onclick="showPage('results')">Resultados</button>
+      <button class="btn-secondary" onclick="showPage('results');setTimeout(()=>switchResTab('perf'),50)" style="border-color:rgba(255,215,0,0.4);color:#ffd700;">⚡ Hall da Fama</button>
     </div>
   </div>
 </div>
@@ -975,69 +1406,150 @@
     <div class="section-eyebrow">// lineup dos times</div>
     <div class="section-title">AS <span>LINEUPS</span></div>
   </div>
-  <div class="reveal-area">
-    <button class="btn-primary" id="revealBtn" onclick="revealNextTeam()">▶ REVELAR PRÓXIMO TIME</button>
-    <div class="reveal-progress" id="revealProgress">0 / 4 times revelados</div>
-  </div>
+
   <div class="teams-grid" id="teamsGrid"></div>
+</div>
+
+<!-- ELENCOS -->
+<div id="page-elencos" class="page">
+  <div class="section-header">
+    <div class="section-eyebrow">// elencos por fase</div>
+    <div class="section-title">ELENCOS <span>COMPLETOS</span></div>
+  </div>
+  <div id="elencos-content" style="max-width:1300px;margin:0 auto;padding:0 40px 60px;"></div>
 </div>
 
 <!-- RESULTS -->
 <div id="page-results" class="page">
   <div class="section-header">
     <div class="section-eyebrow">// classificação e resultados</div>
-    <div class="section-title">TABELA <span>GERAL</span></div>
+    <div class="section-title">RESULTADOS <span>FINAIS</span></div>
   </div>
 
-  <div class="standings">
-    <div class="standings-title">CLASSIFICAÇÃO</div>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:48px">#</th>
-          <th>TIME</th>
-          <th class="center">J</th>
-          <th class="center">V</th>
-          <th class="center">D</th>
-          <th class="center">PTS</th>
-        </tr>
-      </thead>
-      <tbody id="standingsBody"></tbody>
-    </table>
-  </div>
+  <div style="max-width:1000px;margin:0 auto;padding:0 40px 60px;">
 
-  <div class="rr-section">
-    <div class="rr-title">CONFRONTOS DIRETOS</div>
-    <div class="rr-table"><table id="rrTable"></table></div>
-  </div>
+    <!-- PHASE TABS -->
+    <div id="res-tabs" style="display:flex;gap:6px;margin-bottom:28px;flex-wrap:wrap;">
+      <button class="res-tab active" onclick="switchResTab('geral')">Geral</button>
+      <button class="res-tab" onclick="switchResTab('fase1')">Fase 1</button>
+      <button class="res-tab" onclick="switchResTab('fase2')">Fase 2</button>
+      <button class="res-tab" onclick="switchResTab('perf')">⚡ Hall da Fama</button>
+      <button class="res-tab" onclick="switchResTab('admin')" style="margin-left:auto;opacity:0.5">⚙ Admin</button>
+    </div>
 
-  <div class="match-input-section">
-    <div class="admin-badge">Painel Admin</div>
-    <div class="match-input-title">INSERIR RESULTADO</div>
-    <div class="match-form-inner">
-      <div class="form-group">
-        <div class="form-label">Time A</div>
-        <select id="teamA"></select>
+    <!-- GERAL -->
+    <div id="res-geral" class="res-panel">
+
+      <!-- CHAMPION BANNER -->
+      <div id="champion-banner" style="display:none;background:linear-gradient(135deg,rgba(255,61,0,0.12),rgba(255,61,0,0.03));border:1px solid rgba(255,61,0,0.5);padding:24px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden;">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;letter-spacing:6px;color:var(--orange);opacity:0.8;margin-bottom:8px;">// CAMPEÃO DO TORNEIO</div>
+        <div id="champion-name" style="font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:4px;color:var(--orange);text-shadow:0 0 30px rgba(255,61,0,0.5);"></div>
+        <div id="champion-players" style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;letter-spacing:3px;color:rgba(232,224,208,0.5);margin-top:8px;"></div>
+        <div style="position:absolute;font-size:8rem;opacity:0.04;right:-10px;top:-10px;pointer-events:none;">🏆</div>
       </div>
-      <div class="vs-badge">VS</div>
-      <div class="form-group">
-        <div class="form-label">Time B</div>
-        <select id="teamB"></select>
+
+      <!-- PODIUM -->
+      <div id="podium-wrap" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px;"></div>
+
+      <!-- DESTAQUES -->
+      <div id="highlights-wrap" style="margin-bottom:28px;"></div>
+
+      <!-- STANDINGS TABLE -->
+      <div class="standings" style="margin-bottom:24px;">
+        <div class="standings-title">CLASSIFICAÇÃO GERAL</div>
+        <table>
+          <thead><tr>
+            <th style="width:48px">#</th>
+            <th>TIME</th>
+            <th class="center">J</th>
+            <th class="center">V</th>
+            <th class="center">D</th>
+            <th class="center">F1</th>
+            <th class="center">F2</th>
+            <th class="center">PTS</th>
+          </tr></thead>
+          <tbody id="standingsBody"></tbody>
+        </table>
       </div>
-      <div class="form-group">
-        <div class="form-label">Vencedor</div>
-        <select id="winner"></select>
+
+      <!-- RR TABLE -->
+      <div class="rr-section">
+        <div class="rr-title">CONFRONTOS DIRETOS</div>
+        <div class="rr-table"><table id="rrTable"></table></div>
       </div>
     </div>
-    <div class="submit-row" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-      <button class="btn-primary" onclick="addResult()" style="font-size:0.9rem;padding:12px 28px">+ REGISTRAR</button>
-      <button class="btn-secondary" onclick="resetEvent()" style="font-size:0.75rem;padding:10px 20px;letter-spacing:2px;border-color:rgba(255,61,0,0.3);color:rgba(232,224,208,0.4)">⚠ RESETAR EVENTO</button>
-    </div>
-  </div>
 
-  <div class="rr-section">
-    <div class="rr-title">HISTÓRICO DE PARTIDAS</div>
-    <div id="matchHistory"><div class="empty-state">Nenhuma partida registrada ainda</div></div>
+    <!-- FASE 1 -->
+    <div id="res-fase1" class="res-panel" style="display:none;">
+      <div class="standings" style="margin-bottom:24px;">
+        <div class="standings-title">CLASSIFICAÇÃO — FASE 1</div>
+        <table>
+          <thead><tr>
+            <th style="width:48px">#</th><th>TIME</th>
+            <th class="center">J</th><th class="center">V</th><th class="center">D</th><th class="center">PTS</th>
+          </tr></thead>
+          <tbody id="standings-f1"></tbody>
+        </table>
+      </div>
+      <div class="rr-section" style="margin-bottom:24px;">
+        <div class="rr-title">CONFRONTOS — FASE 1</div>
+        <div class="rr-table"><table id="rr-f1"></table></div>
+      </div>
+      <div class="rr-section">
+        <div class="rr-title">PARTIDAS — FASE 1</div>
+        <div id="history-f1"></div>
+      </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div id="res-fase2" class="res-panel" style="display:none;">
+      <div class="standings" style="margin-bottom:24px;">
+        <div class="standings-title">CLASSIFICAÇÃO — FASE 2</div>
+        <table>
+          <thead><tr>
+            <th style="width:48px">#</th><th>TIME</th>
+            <th class="center">J</th><th class="center">V</th><th class="center">D</th><th class="center">PTS</th>
+          </tr></thead>
+          <tbody id="standings-f2"></tbody>
+        </table>
+      </div>
+      <div class="rr-section" style="margin-bottom:24px;">
+        <div class="rr-title">CONFRONTOS — FASE 2</div>
+        <div class="rr-table"><table id="rr-f2"></table></div>
+      </div>
+      <div class="rr-section">
+        <div class="rr-title">PARTIDAS — FASE 2</div>
+        <div id="history-f2"></div>
+      </div>
+    </div>
+
+    <!-- PERFORMANCE HALL -->
+    <div id="res-perf" class="res-panel" style="display:none;">
+      <div id="perf-content"></div>
+    </div>
+
+    <!-- ADMIN -->
+    <div id="res-admin" class="res-panel" style="display:none;">
+      <div class="match-input-section">
+        <div class="admin-badge">Painel Admin</div>
+        <div class="match-input-title">INSERIR RESULTADO</div>
+        <div class="match-form-inner">
+          <div class="form-group"><div class="form-label">Time A</div><select id="teamA"></select></div>
+          <div class="vs-badge">VS</div>
+          <div class="form-group"><div class="form-label">Time B</div><select id="teamB"></select></div>
+          <div class="form-group"><div class="form-label">Vencedor</div><select id="winner"></select></div>
+        </div>
+        <div class="submit-row" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+          <button class="btn-primary" onclick="addResult()" style="font-size:0.9rem;padding:12px 28px">+ REGISTRAR</button>
+          <button class="btn-secondary" onclick="resetEvent()" style="font-size:0.75rem;padding:10px 20px;letter-spacing:2px;border-color:rgba(255,61,0,0.3);color:rgba(232,224,208,0.4)">⚠ RESETAR EVENTO</button>
+        </div>
+      </div>
+      <div class="rr-section">
+        <div class="rr-title">HISTÓRICO COMPLETO</div>
+        <div id="matchHistory"><div class="empty-state">Nenhuma partida registrada ainda</div></div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1074,32 +1586,32 @@ const REVEAL_SOUND_B64 = "data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2
 
 const TEAMS_RAW = [
   {
-    players: ["Nandinho", "xTK", "Venta", "Doidão", "Dougz"],
-    photos:  [PHOTOS["nandinho"], PHOTOS["xtk"], PHOTOS["venta"], PHOTOS["doidao"], PHOTOS["doug"]],
+    players: ["DZ1", "Rikito", "Tutu", "Batata", "Bonito"],
+    photos:  [PHOTOS["dz1"], PHOTOS["rikito"], PHOTOS["tutu"], PHOTOS["batata"], PHOTOS["bonito"]],
     roles:   ["Support 5", "Hard Carry", "Mid", "Offlaner", "Support 4"],
-    immortal:[false, false, true, true, false]
+    immortal:[false, false, true, false, false]
   },
   {
-    players: ["Bonito", "RDG", "Boss", "Guaia", "Ace"],
-    photos:  [PHOTOS["bonito"], PHOTOS["rdg"], PHOTOS["wendell"], PHOTOS["guaia"], PHOTOS["ace"]],
+    players: ["BigBoss", "xTK", "Doidão", "Dougz", "Ace"],
+    photos:  [PHOTOS["wendell"], PHOTOS["xtk"], PHOTOS["doidao"], PHOTOS["doug"], PHOTOS["ace"]],
     roles:   ["Support 5", "Hard Carry", "Mid", "Offlaner", "Support 4"],
-    immortal:[false, true, false, true, false]
+    immortal:[false, false, true, false, false]
   },
   {
-    players: ["RZ1", "Tutu", "DZ1", "NetoNeto", "Ori"],
-    photos:  [PHOTOS["rz1"], PHOTOS["tutu"], PHOTOS["dz1"], PHOTOS["netoneto"], PHOTOS["ori"]],
+    players: ["Venta", "Zelezin", "Mago", "Ori", "Nandinho"],
+    photos:  [PHOTOS["venta"], PHOTOS["zelezin"], PHOTOS["mago"], PHOTOS["ori"], PHOTOS["nandinho"]],
     roles:   ["Support 5", "Hard Carry", "Mid", "Offlaner", "Support 4"],
-    immortal:[false, true, false, false, true]
+    immortal:[true, false, false, true, false]
   },
   {
-    players: ["Lelito", "Zelezin", "Light", "Mago", "Batata"],
-    photos:  [PHOTOS["lelito"], PHOTOS["zelezin"], PHOTOS["light"], PHOTOS["mago"], PHOTOS["batata"]],
+    players: ["NetoNeto", "RDG", "Guaia", "Lelito", "RZ1"],
+    photos:  [PHOTOS["netoneto"], PHOTOS["rdg"], PHOTOS["guaia"], PHOTOS["lelito"], PHOTOS["rz1"]],
     roles:   ["Support 5", "Hard Carry", "Mid", "Offlaner", "Support 4"],
-    immortal:[true, false, false, false, false]
+    immortal:[false, true, true, true, false]
   }
 ];
 
-const TEAM_NAMES = ["LADO A", "LADO B", "CLIMA TENSO", "PASSA NADA"];
+const TEAM_NAMES = ["TIME 1", "TIME 2", "TIME 3", "TIME 4"];
 
 let teams = [];
 let results = [];
@@ -1139,10 +1651,9 @@ function initTeams() {
       immortal: TEAMS_RAW[i].immortal
     }));
   } else {
-    const names = [...TEAM_NAMES].sort(() => Math.random() - 0.5);
     teams = TEAMS_RAW.map((t, i) => ({
       id: i,
-      name: names[i],
+      name: TEAM_NAMES[i],
       players: t.players,
       photos: t.photos,
       roles: t.roles,
@@ -1156,11 +1667,12 @@ function showPage(id) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
   document.getElementById("page-" + id).classList.add("active");
-  const idx = ["home", "teams", "results"].indexOf(id);
+  const idx = ["home", "teams", "elencos", "results"].indexOf(id);
   document.querySelectorAll(".nav-tab")[idx].classList.add("active");
   window.scrollTo({ top: 0, behavior: "smooth" });
-  if (id === "results") { renderStandings(); renderRR(); renderHistory(); populateSelects(); }
+  if (id === "results") { renderAllResults(); populateSelects(); }
   if (id === "teams") renderTeams();
+  if (id === "elencos") renderElencos();
 }
 
 function renderTeams() {
@@ -1168,46 +1680,34 @@ function renderTeams() {
   grid.innerHTML = "";
   teams.forEach((team, i) => {
     const card = document.createElement("div");
-    card.className = "team-card" + (i < revealCount ? " revealed" : "");
+    card.className = "team-card revealed";
     card.id = "team-card-" + i;
 
     const teamUnlocked = unlockedPlayers[i] || [];
 
     const playersHTML = team.players.map((nick, j) => {
-      const isUnlocked = teamUnlocked.includes(j);
       const role = team.roles ? team.roles[j] : '';
       const isImortal = team.immortal ? team.immortal[j] : false;
       const medalHTML = isImortal
         ? `<div class="medal-wrap"><img src="${IMORTAL_BADGE}" alt="Imortal"></div>`
         : '';
       return `
-      <div class="player-slot ${isUnlocked ? 'unlocked' : 'locked'}"
-           data-team="${i}" data-player="${j}"
-           onclick="unlockPlayer(${i}, ${j}, this)">
+      <div class="player-slot unlocked" data-team="${i}" data-player="${j}">
         <div class="player-img-wrap">
           <img src="${team.photos[j]}" alt="${nick}" loading="lazy" decoding="async">
-          <div class="lock-noise"></div>
-          <div class="lock-scan"></div>
-          <div class="lock-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-            <div class="lock-hint">Clique</div>
-          </div>
           ${medalHTML}
         </div>
         <div class="player-label">
-          <div class="player-nick">${isUnlocked ? nick : '? ? ?'}</div>
-          <div class="player-role">${isUnlocked ? role : ''}</div>
+          <div class="player-nick">${nick}</div>
+          <div class="player-role">${role}</div>
         </div>
       </div>`;
     }).join("");
 
     card.innerHTML = `
       <div class="team-card-header">
-        <div class="team-name">${i < revealCount ? team.name : "???"}</div>
-        <div class="team-tag">${i < revealCount ? "TIME " + (i + 1) : "A REVELAR"}</div>
+        <div class="team-name">${team.name}</div>
+        <div class="team-tag">TIME ${i + 1}</div>
       </div>
       <div class="players-strip">${playersHTML}</div>`;
 
@@ -1543,10 +2043,10 @@ function renderStandings() {
 
 function renderRR() {
   let html = "<thead><tr><th></th>";
-  teams.forEach(t => { html += `<th style="font-family:'Bebas Neue';font-size:0.85rem;letter-spacing:2px;color:rgba(232,224,208,0.5);padding:12px 16px">${t.name}</th>`; });
+  teams.forEach(t => { html += `<th style="font-family:'Bebas Neue';font-size:0.85rem;letter-spacing:2px;color:rgba(232,224,208,0.5);padding:12px 16px">${wrapWithTooltip(t.name, t.id)}</th>`; });
   html += "</tr></thead><tbody>";
   teams.forEach(row => {
-    html += `<tr><td style="font-family:'Bebas Neue';font-size:0.85rem;letter-spacing:1px;padding:12px 16px;white-space:nowrap">${row.name}</td>`;
+    html += `<tr><td style="font-family:'Bebas Neue';font-size:0.85rem;letter-spacing:1px;padding:12px 16px;white-space:nowrap">${wrapWithTooltip(row.name, row.id)}</td>`;
     teams.forEach(col => {
       if (row.id === col.id) { html += `<td class="rr-cell self-cell" style="padding:12px 16px">—</td>`; return; }
       const m = results.find(r => (r.teamA === row.id && r.teamB === col.id) || (r.teamA === col.id && r.teamB === row.id));
@@ -1577,8 +2077,903 @@ function renderHistory() {
   }).join("") + "</div>";
 }
 
+
+
+// ── PRE-LOADED TOURNAMENT RESULTS ────────────────────────────
+const PRESET_RESULTS = [
+  // Fase 1
+  { id: 1001, phase: 1, teamA: 0, teamB: 3, winner: 3, loser: 0 },
+  { id: 1002, phase: 1, teamA: 1, teamB: 2, winner: 2, loser: 1 },
+  { id: 1003, phase: 1, teamA: 1, teamB: 3, winner: 3, loser: 1 },
+  { id: 1004, phase: 1, teamA: 0, teamB: 2, winner: 2, loser: 0 },
+  { id: 1005, phase: 1, teamA: 2, teamB: 3, winner: 2, loser: 3 },
+  { id: 1006, phase: 1, teamA: 0, teamB: 1, winner: 0, loser: 1 },
+  // Fase 2
+  { id: 2001, phase: 2, teamA: 1, teamB: 2, winner: 1, loser: 2 },
+  { id: 2002, phase: 2, teamA: 0, teamB: 3, winner: 3, loser: 0 },
+];
+
+// ── NEW RENDER FUNCTIONS ──────────────────────────────────────
+function switchResTab(tab) {
+  document.querySelectorAll('.res-panel').forEach(p => p.style.display = 'none');
+  document.querySelectorAll('.res-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('res-' + tab).style.display = 'block';
+  const tabs = ['geral','fase1','fase2','perf','admin'];
+  document.querySelectorAll('.res-tab')[tabs.indexOf(tab)].classList.add('active');
+  if (tab === 'perf') renderHallFama();
+}
+
+const PHASE_LABELS = { 1: 'Fase 1', 2: 'Fase 2' };
+const MEDALS = ['🥇','🥈','🥉','4º'];
+const PODIUM_CLS = ['p1','p2','p3','p4'];
+
+function calcStatsFrom(matchList, teamList) {
+  return teamList.map(t => {
+    const wins   = matchList.filter(r => r.winner === t.id).length;
+    const losses = matchList.filter(r => (r.teamA===t.id||r.teamB===t.id) && r.winner!==t.id).length;
+    return { ...t, wins, losses, played: wins+losses, pts: wins*3 };
+  }).sort((a,b) => b.pts-a.pts || b.wins-a.wins);
+}
+
+function standingsRowsHTML(stats, extraCols) {
+  return stats.map((t,i) => `
+    <tr>
+      <td><span class="pos-badge ${i===0?'gold':''}">${i+1}</span></td>
+      <td class="team-name-cell">${wrapWithTooltip(t.name, t.id)}</td>
+      <td class="stat center">${t.played}</td>
+      <td class="stat win center">${t.wins}</td>
+      <td class="stat loss center">${t.losses}</td>
+      ${extraCols ? extraCols(t) : ''}
+      <td class="stat pts center">${t.pts}</td>
+    </tr>`).join('');
+}
+
+function rrTableHTML(matchList, teamList) {
+  let h = '<thead><tr><th></th>';
+  teamList.forEach(t => { h += `<th style="font-family:'Bebas Neue';font-size:0.85rem;letter-spacing:2px;color:rgba(232,224,208,0.5);padding:12px 10px">${wrapWithTooltip(t.name, t.id)}</th>`; });
+  h += '</tr></thead><tbody>';
+  teamList.forEach(row => {
+    h += `<tr><td style="font-family:'Bebas Neue';font-size:0.85rem;letter-spacing:1px;padding:12px 10px;white-space:nowrap">${wrapWithTooltip(row.name, row.id)}</td>`;
+    teamList.forEach(col => {
+      if(row.id===col.id){h+=`<td class="rr-cell self-cell" style="padding:12px 10px">—</td>`;return;}
+      const m=matchList.find(r=>(r.teamA===row.id&&r.teamB===col.id)||(r.teamA===col.id&&r.teamB===row.id));
+      if(m){const w=m.winner===row.id;h+=`<td class="rr-cell ${w?'win-cell':'loss-cell'}" style="padding:12px 10px">${w?'W':'L'}</td>`;}
+      else{h+=`<td class="rr-cell pending" style="padding:12px 10px">·</td>`;}
+    });
+    h+='</tr>';
+  });
+  return h+'</tbody>';
+}
+
+function matchHistoryHTML(matchList) {
+  if(!matchList.length) return '<div class="empty-state">Nenhuma partida registrada ainda</div>';
+  return '<div class="matches-list">' + [...matchList].reverse().map((r,i) => {
+    const tA=teams.find(t=>t.id===r.teamA), tB=teams.find(t=>t.id===r.teamB);
+    const aWon=r.winner===tA.id;
+    const phaseBadge = r.phase ? `<span class="phase-dot f${r.phase}">F${r.phase}</span>` : '';
+    return `<div class="match-item">
+      <div class="match-num">${phaseBadge} #${matchList.length - i}</div>
+      <div class="match-teams">
+        <div class="match-team ${aWon?'winner':'loser'}">${tA.name}</div>
+        <div class="match-result">vs</div>
+        <div class="match-team right ${!aWon?'winner':'loser'}">${tB.name}</div>
+      </div>
+      <button class="btn-delete" onclick="deleteResult(${r.id})">✕</button>
+    </div>`;
+  }).join('') + '</div>';
+}
+
+
+function renderHighlights() {
+  const wrap = document.getElementById('highlights-wrap');
+  if (!wrap || results.length === 0) return;
+
+  const all = results;
+  const f1  = all.filter(r => r.phase === 1);
+  const f2  = all.filter(r => r.phase === 2);
+
+  // Per-team stats
+  const tStats = teams.map(t => {
+    const wins   = all.filter(r => r.winner === t.id).length;
+    const losses = all.filter(r => (r.teamA===t.id||r.teamB===t.id) && r.winner!==t.id).length;
+    const f1w    = f1.filter(r => r.winner === t.id).length;
+    const f2w    = f2.filter(r => r.winner === t.id).length;
+    return { ...t, wins, losses, pts: wins*3, f1w, f2w };
+  }).sort((a,b) => b.pts - a.pts);
+
+  const champ   = tStats[0];
+  const last    = tStats[tStats.length - 1];
+  const mostWins = tStats[0];
+  const f1King  = [...tStats].sort((a,b)=>b.f1w-a.f1w)[0];
+  const f2King  = [...tStats].sort((a,b)=>b.f2w-a.f2w)[0];
+  const comeback= tStats.find(t => t.f1w === 0 && t.f2w > 0);
+  const dropped = tStats.find(t => t.f1w > 0 && t.f2w === 0);
+
+  // Elenco helpers
+  const E = ELENCOS;
+  const champE  = E.find(x=>x.id===champ.id);
+  const lastE   = E.find(x=>x.id===last.id);
+  const f1KingE = E.find(x=>x.id===f1King.id);
+  const f2KingE = E.find(x=>x.id===f2King.id);
+
+  // Venta — played for 2 teams
+  const ventaF1team = E.find(e => e.f1.includes('Venta'));
+  const ventaF2team = E.find(e => e.f2.includes('Venta') && e.subIn === 'Venta');
+  const ventaF1wins = f1.filter(r => r.winner === ventaF1team?.id).length;
+  const ventaF2wins = f2.filter(r => r.winner === ventaF2team?.id).length;
+
+  // DZ1 — left TIME 1, entered TIME 4
+  const dz1F2team = E.find(e => e.subIn === 'DZ1');
+  const dz1F2wins = f2.filter(r => r.winner === dz1F2team?.id).length;
+
+  // TIME 3 only loss
+  const t3losses = all.filter(r => (r.teamA===2||r.teamB===2) && r.winner!==2);
+
+  wrap.innerHTML = `
+    <div class="hl-section-title">DESTAQUES DO <span>TORNEIO</span></div>
+
+    <!-- QUICK STATS ROW -->
+    <div class="hl-grid" style="margin-bottom:14px;">
+
+      <div class="hl-card gold">
+        <span class="hl-icon">🏆</span>
+        <div class="hl-label">Campeão</div>
+        <div class="hl-value gold">${champ.name}</div>
+        <div class="hl-desc">${champ.wins}V ${champ.losses}D · ${champ.pts} pts<br><b>${champE?.f1.join(', ')}</b></div>
+      </div>
+
+      <div class="hl-card green">
+        <span class="hl-icon">⚡</span>
+        <div class="hl-label">Domínio na Fase 1</div>
+        <div class="hl-value green">${f1King.name}</div>
+        <div class="hl-desc"><b>${f1King.f1w} vitórias</b> na fase 1 — invicto<br>${f1KingE?.f1.join(', ')}</div>
+      </div>
+
+      <div class="hl-card blue">
+        <span class="hl-icon">🔄</span>
+        <div class="hl-label">Domínio na Fase 2</div>
+        <div class="hl-value blue">${f2King.name}</div>
+        <div class="hl-desc"><b>${f2King.f2w} vitória(s)</b> na fase 2<br>${f2KingE?.f2.join(', ')}</div>
+      </div>
+
+    </div>
+
+    <!-- NEGATIVE/SURPRISE ROW -->
+    <div class="hl-grid" style="margin-bottom:14px;">
+
+      <div class="hl-card red">
+        <span class="hl-icon">😤</span>
+        <div class="hl-label">Lanterna</div>
+        <div class="hl-value red">${last.name}</div>
+        <div class="hl-desc">${last.wins}V ${last.losses}D · ${last.pts} pts no total<br><b>${lastE?.f1.join(', ')}</b></div>
+      </div>
+
+      ${comeback ? `
+      <div class="hl-card orange">
+        <span class="hl-icon">🔥</span>
+        <div class="hl-label">Virada na F2</div>
+        <div class="hl-value orange">${comeback.name}</div>
+        <div class="hl-desc"><b>0 vitórias na F1</b> → reagiu na Fase 2<br>${E.find(x=>x.id===comeback.id)?.f2.join(', ')}</div>
+      </div>` : ''}
+
+      ${dropped ? `
+      <div class="hl-card gray">
+        <span class="hl-icon">📉</span>
+        <div class="hl-label">Queda na F2</div>
+        <div class="hl-value" style="color:rgba(232,224,208,0.5)">${dropped.name}</div>
+        <div class="hl-desc">Venceu na F1 mas <b>não pontuou na F2</b><br>${E.find(x=>x.id===dropped.id)?.f2.join(', ')}</div>
+      </div>` : ''}
+
+    </div>
+
+    <div class="hl-divider">// narrativas do torneio</div>
+
+    <!-- STORY CARDS -->
+    <div class="hl-story">
+      <div class="hl-story-icon">🌟</div>
+      <div class="hl-story-body">
+        <div class="hl-story-title">VENTA — <span>O JOGADOR DE DOIS MUNDOS</span></div>
+        <div class="hl-story-text">
+          Único jogador a atuar por dois times diferentes. Na Fase 1 foi pilar do <b>${ventaF1team?.name}</b>, somando <b>${ventaF1wins} vitória(s)</b>.
+          Na Fase 2, transferido para o <b>${ventaF2team?.name}</b>, ajudou a equipe a pontuar <b>${ventaF2wins} vez(es)</b>.
+          No total: dois times, zero derrotas pessoais. MVP do torneio.
+        </div>
+        <span class="hl-badge pos">Feito positivo</span>
+        <span class="hl-badge neu">2 times · sem derrota</span>
+      </div>
+    </div>
+
+    <div class="hl-story">
+      <div class="hl-story-icon">👑</div>
+      <div class="hl-story-body">
+        <div class="hl-story-title">TIME 3 — <span>A MÁQUINA QUE QUASE NÃO PAROU</span></div>
+        <div class="hl-story-text">
+          <b>Venta, Zelezin, Mago, Ori e Nandinho</b> terminaram a Fase 1 com <b>campanha perfeita — 3V 0D</b>.
+          Sofreram sua única derrota na Fase 2, justamente para o TIME 2 que recebeu <b>Venta</b> na substituição —
+          alguém que conhecia cada fraqueza do elenco. Mesmo assim, campeões do torneio.
+        </div>
+        <span class="hl-badge pos">Campeões</span>
+        <span class="hl-badge neu">F1 invictos</span>
+      </div>
+    </div>
+
+    <div class="hl-story">
+      <div class="hl-story-icon">⚔️</div>
+      <div class="hl-story-body">
+        <div class="hl-story-title">TIME 4 vs TIME 3 — <span>A RIVALIDADE DO TORNEIO</span></div>
+        <div class="hl-story-text">
+          Os dois melhores times se encontraram na Fase 1 e o <b>TIME 3 levou</b>. Terminaram empatados em pontos
+          no geral — <b>9pts cada</b>. O título foi decidido pelo confronto direto. Um empate técnico que
+          precisou da tabela para ter um vencedor.
+        </div>
+        <span class="hl-badge neu">9pts × 9pts</span>
+        <span class="hl-badge pos">Decidido no confronto direto</span>
+      </div>
+    </div>
+
+    <div class="hl-story">
+      <div class="hl-story-icon">💀</div>
+      <div class="hl-story-body">
+        <div class="hl-story-title">TIME 2 — <span>ZERO NA FASE 1, HERÓI NA FASE 2</span></div>
+        <div class="hl-story-text">
+          <b>BigBoss, xTK, Doidão, Dougz e Ace</b> não venceram nenhum jogo na Fase 1 — <b>3 derrotas seguidas</b>.
+          Com a entrada de <b>Venta</b> na Fase 2, conseguiram o que ninguém mais fez no torneio:
+          derrotar o TIME 3. O time que estava no fundo voltou para assombrar o líder.
+        </div>
+        <span class="hl-badge neg">0V na Fase 1</span>
+        <span class="hl-badge pos">Derrubou o líder na F2</span>
+      </div>
+    </div>
+
+    <div class="hl-story">
+      <div class="hl-story-icon">🔓</div>
+      <div class="hl-story-body">
+        <div class="hl-story-title">DZ1 — <span>A TROCA QUE FUNCIONOU (PARA UM LADO)</span></div>
+        <div class="hl-story-text">
+          <b>DZ1</b> saiu do TIME 1 — que foi campeão apenas de 1 jogo na Fase 1 — e entrou no <b>TIME 4</b>.
+          Resultado? O TIME 4 venceu na Fase 2. Enquanto isso, o TIME 1 com <b>NetoNeto</b> no lugar
+          ficou zerado na Fase 2. A substituição foi claramente favorável ao TIME 4.
+        </div>
+        <span class="hl-badge pos">TIME 4 ganhou com DZ1</span>
+        <span class="hl-badge neg">TIME 1 zerou na F2</span>
+      </div>
+    </div>
+
+    <div class="hl-story">
+      <div class="hl-story-icon">😔</div>
+      <div class="hl-story-body">
+        <div class="hl-story-title">TIME 1 — <span>A HISTÓRIA DE QUEM QUASE</span></div>
+        <div class="hl-story-text">
+          <b>Rikito, Tutu, Batata, Bonito</b> e DZ1 (depois NetoNeto) tiveram um torneio de altos e baixos.
+          A única vitória veio contra o TIME 2 na Fase 1 — o time que zerou a fase. Na Fase 2, nada.
+          Terminaram empatados com o TIME 2 em pontos, mas com trajetórias completamente opostas.
+        </div>
+        <span class="hl-badge neg">1V em 4 jogos</span>
+        <span class="hl-badge neg">Zerou na Fase 2</span>
+      </div>
+    </div>
+  `;
+}
+
+
+function renderHallFama() {
+  const cont = document.getElementById('perf-content');
+  if (cont.innerHTML.trim()) return;
+
+  cont.innerHTML = `
+    <div class="hf-eyebrow"><span class="hf-live"></span>NonStop · Cenário DOTA PE · Análise de Performance</div>
+    <div class="hf-title">HALL DA <span>FAMA</span></div>
+    <div class="hf-title" style="color:var(--orange);font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px">E DA VERGONHA</div>
+    <div class="hf-intro">6 partidas · 20 jogadores · dados que não mentem</div>
+
+    <!-- ═══ LENDAS ═══ -->
+    <div class="hf-section gold">🏆 LENDAS DO TORNEIO</div>
+
+    <div class="hf-card tier-s">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank gold">I</div>
+          <div class="hf-number-label" style="width:52px">S TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span>ZELEZIN</span> — O HOMEM QUE NÃO MORRE</div>
+          <div class="hf-subline">3 partidas · 3 vitórias · KD 6.50 · MVP absoluto</div>
+          <div class="hf-text">
+            Enquanto outros jogadores vinham buscar experiência, <b>Zelezin veio buscar domínio</b>.
+            Três partidas. Três vitórias. <span class="fire">KD de 6.50</span> — o melhor do evento por uma margem absurda.
+            Na P3, zerou as mortes: <b>12/0/16</b>. Na P6, numa batalha épica de 49 minutos,
+            acumulou <b class="fire">37.463 de gold</b> — o recorde do torneio.
+            Quando Zelezin estava no time, o resultado era previsível. <b>Nunca perdeu.</b>
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat gld">KD 6.50</span>
+            <span class="hf-stat pos">39 kills totais</span>
+            <span class="hf-stat pos">0 derrotas</span>
+            <span class="hf-stat gld">37.463 gold máximo</span>
+            <span class="hf-stat pos">12/0/16 na P3</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number gold">39</div>
+          <div class="hf-number-label">kills</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-s">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank gold">II</div>
+          <div class="hf-number-label" style="width:52px">S TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span>ORI</span> — 91 ASSISTÊNCIAS. NOVENTA E UMA.</div>
+          <div class="hf-subline">3 partidas · 3 vitórias · suporte lendário</div>
+          <div class="hf-text">
+            A pergunta não é quantas kills Ori fez. A pergunta é: <b>como alguém consegue 91 assistências em 3 jogos?</b>
+            Média de <span class="fire">30 assists por partida</span>. Na P5, como Lion, registrou <b>19/3/34</b> —
+            34 assistências num único jogo. Isso significa que Ori estava presente em quase
+            <b>cada kill do time</b>. Um suporte que não apenas apoia — <b>ele decide o jogo.</b>
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat gld">91 assists totais</span>
+            <span class="hf-stat pos">0 derrotas</span>
+            <span class="hf-stat pos">34 assists P5</span>
+            <span class="hf-stat pos">30 assists/jogo (média)</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number gold">91</div>
+          <div class="hf-number-label">assists</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-a">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank" style="color:#ff9900">III</div>
+          <div class="hf-number-label" style="width:52px">A TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span>MAJESTICNOSE</span> — A CONSTANTE INABALÁVEL</div>
+          <div class="hf-subline">3 partidas · 3 vitórias · nunca fez menos de 10 kills</div>
+          <div class="hf-text">
+            Enquanto outros oscilavam, <b>MajesticNose entregava</b>. Em todo jogo que disputou,
+            fez no mínimo 10 kills. Na P6: <b class="fire">18/5/17 e 31.104 de gold</b>.
+            Três jogos, três vitórias, sempre relevante. O jogador mais confiável do torneio
+            <b>quando o assunto é consistência</b>.
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat pos">3V em 3J</span>
+            <span class="hf-stat pos">18 kills P6</span>
+            <span class="hf-stat gld">31.104 gold P6</span>
+            <span class="hf-stat neu">+10 kills em todos os jogos</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number" style="color:#ff9900">3/3</div>
+          <div class="hf-number-label">vitórias</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-a">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank" style="color:#ff9900">IV</div>
+          <div class="hf-number-label" style="width:52px">A TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span>RDG</span> — QUANDO VENCE, É O MELHOR DA QUADRA</div>
+          <div class="hf-subline">3 partidas · 2 vitórias · KD 2.91</div>
+          <div class="hf-text">
+            Na P1 como Juggernaut: <b class="fire">19/3/16 e 31.955 de gold</b>. Um dos maiores
+            individuais do torneio. Na P2: impecável, 9/2/15. O problema? Na P3,
+            quando o time afundou, RDG afundou junto — <b>4/6/5</b>, invisível.
+            <b>Carry de altíssimo nível que precisa de estrutura para explodir.</b>
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat pos">19 kills P1</span>
+            <span class="hf-stat gld">31.955 gold P1</span>
+            <span class="hf-stat neu">KD 2.91</span>
+            <span class="hf-stat neg">Apagado nas derrotas</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number" style="color:#ff9900">19</div>
+          <div class="hf-number-label">kills máx</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-divider">// — FIM DAS LENDAS — FIM DAS LENDAS — FIM DAS LENDAS — //</div>
+
+    <!-- ═══ TRAGÉDIAS ═══ -->
+    <div class="hf-section red">💀 HALL DA VERGONHA</div>
+
+    <div class="hf-card tier-rip">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank skull">☠</div>
+          <div class="hf-number-label" style="width:52px">F TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span style="color:#ff4c4c">ACE</span> — 34 MORTES. O TORNEIO INTEIRO NÃO PERDOOU.</div>
+          <div class="hf-subline">3 partidas · 0 vitórias · KD 0.21 · recorde negativo</div>
+          <div class="hf-text">
+            Trinta e quatro mortes em três jogos. <b class="cold">Média de 11 mortes por partida.</b>
+            Na P2 como Warlock: <b>2/16/4</b> — <span class="cold">16 mortes em um único jogo</span>,
+            recorde absoluto do evento. Na P4: 1/8/6. Na P6: 4/10/24.
+            Ace nunca venceu. Em todos os jogos, foi consistentemente o jogador com mais mortes
+            do time. <b>KD de 0.21 — para cada kill, morreu quase 5 vezes.</b>
+            O torneio foi cruel com Ace, e Ace foi cruel consigo mesmo.
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat neg">34 mortes totais</span>
+            <span class="hf-stat neg">16 mortes P2 — recorde</span>
+            <span class="hf-stat neg">0V em 3J</span>
+            <span class="hf-stat neg">KD 0.21</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number red">34</div>
+          <div class="hf-number-label">mortes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-rip">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank skull">☠</div>
+          <div class="hf-number-label" style="width:52px">F TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span style="color:#ff4c4c">BONITO</span> — O NOME É UMA MENTIRA</div>
+          <div class="hf-subline">3 partidas · 1 vitória · 32 mortes totais</div>
+          <div class="hf-text">
+            O nome diz Bonito, os números dizem outra coisa.
+            Na P1 como Clockwerk: <b class="cold">1/16/15</b> — <span class="cold">empatou o recorde de 16 mortes</span>
+            com Ace, no mesmo torneio, praticamente ao mesmo tempo.
+            32 mortes em 3 jogos. KD de 0.22.
+            A única vitória? P4, com 4/4/23 — quando o time estava ganhando fácil de qualquer forma.
+            <b>Bonito sobrevive apenas quando o time não precisa dele.</b>
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat neg">1/16/15 na P1</span>
+            <span class="hf-stat neg">32 mortes totais</span>
+            <span class="hf-stat neg">KD 0.22</span>
+            <span class="hf-stat neg">Empatou recorde negativo</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number red">32</div>
+          <div class="hf-number-label">mortes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-bad">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank red">D</div>
+          <div class="hf-number-label" style="width:52px">D TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span style="color:#ff4c4c">BIGBOSS</span> — GRANDE NO NOME, INVISÍVEL NOS RESULTADOS</div>
+          <div class="hf-subline">3 partidas · 0 vitórias · sempre no lado errado</div>
+          <div class="hf-text">
+            Em 3 jogos, <b>0 vitórias</b>. Na P2 como Invoker — o herói mais difícil do jogo —
+            conseguiu <b class="cold">apenas 1 assistência</b> em toda a partida. Uma. Único.
+            Na P6, fez <b>14/7/18 com 25.500 gold</b> — uma das melhores performances individuais
+            do evento. <b>E perdeu assim mesmo.</b> Talvez BigBoss seja o jogador mais
+            injustiçado do torneio — ou talvez seja o elo fraco que draga o time pro fundo.
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat neg">0V em 3J</span>
+            <span class="hf-stat neg">4/8/1 P2 como Invoker</span>
+            <span class="hf-stat neu">14/7/18 P6 mesmo perdendo</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number red">0</div>
+          <div class="hf-number-label">vitórias</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-bad">
+      <div class="hf-card-inner">
+        <div>
+          <div class="hf-rank red">D</div>
+          <div class="hf-number-label" style="width:52px">D TIER</div>
+        </div>
+        <div class="hf-body">
+          <div class="hf-headline"><span style="color:#ff4c4c">RZ1</span> — DE 5/4/32 À DESONRA COMPLETA</div>
+          <div class="hf-subline">3 partidas · 2 vitórias · mas a P3 manchou tudo</div>
+          <div class="hf-text">
+            RZ1 tinha tudo para ser herói. Na P1: <b>5/4/32 — 32 assistências</b>, lendário.
+            Na P2: 3/3/24, sólido. Mas na P3, quando o time (TIME 4) enfrentou o TIME 3 invicto,
+            RZ1 entrou em colapso total: <b class="cold">0/10/8 — 0 kills, 10 mortes, 3.523 de gold.</b>
+            Zero kills. Dez mortes. O menor gold do evento inteiro.
+            <b>De 32 assistências a 0 kills no mesmo torneio.</b> A queda foi épica.
+          </div>
+          <div class="hf-stats">
+            <span class="hf-stat pos">32 assists P1</span>
+            <span class="hf-stat neg">0/10/8 na P3</span>
+            <span class="hf-stat neg">3.523 gold — menor do evento</span>
+            <span class="hf-stat neg">Colapso total</span>
+          </div>
+        </div>
+        <div>
+          <div class="hf-number red" style="font-size:2.5rem">0/10</div>
+          <div class="hf-number-label">K/D P3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-divider">// — DADOS NÃO MENTEM — OS NÚMEROS FICAM — //</div>
+
+    <!-- ═══ MOMENTOS ÉPICOS ═══ -->
+    <div class="hf-section" style="color:var(--orange)">⚡ MOMENTOS QUE FICARAM NA HISTÓRIA</div>
+
+    <div class="hf-card tier-b">
+      <div class="hf-card-inner">
+        <div style="font-size:2rem;flex-shrink:0;width:52px;text-align:center">🎯</div>
+        <div class="hf-body">
+          <div class="hf-headline">ORI FAZ <span>34 ASSISTS</span> EM UM ÚNICO JOGO</div>
+          <div class="hf-subline">P5 · Vitória dos Iluminados · 33:52</div>
+          <div class="hf-text">Na P5, Ori como Lion foi onipresente. Cada kill do time, ele estava lá. 34 assists em 33 minutos — uma assist a cada 58 segundos de jogo. <b>O time literalmente não matava sem Ori.</b></div>
+          <div class="hf-stats"><span class="hf-stat gld">34 assists em 33min</span><span class="hf-stat pos">1 assist por minuto</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-b">
+      <div class="hf-card-inner">
+        <div style="font-size:2rem;flex-shrink:0;width:52px;text-align:center">💰</div>
+        <div class="hf-body">
+          <div class="hf-headline">ZELEZIN ACUMULA <span>37.463 DE GOLD</span> EM 49 MINUTOS</div>
+          <div class="hf-subline">P6 · Vitória da ECLIPSE · 49:14</div>
+          <div class="hf-text">A partida mais longa do torneio (49 minutos) produziu o maior gold individual. Zelezin terminou com quase o dobro do segundo colocado da mesma partida. <b>14/5/21 com um farm absurdo</b> — a performance mais completa do evento.</div>
+          <div class="hf-stats"><span class="hf-stat gld">37.463 gold</span><span class="hf-stat pos">14/5/21</span><span class="hf-stat neu">Recorde do torneio</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-b">
+      <div class="hf-card-inner">
+        <div style="font-size:2rem;flex-shrink:0;width:52px;text-align:center">🩸</div>
+        <div class="hf-body">
+          <div class="hf-headline">NETO ZERA AS MORTES COMO <span>KUNKKA</span></div>
+          <div class="hf-subline">P2 · Sport Club do Recife · 10/0/14</div>
+          <div class="hf-text">Numa vitória dominante por 33×9, NetoNeto como Kunkka não morreu uma única vez. <b>10 kills, 0 mortes, 14 assists, 22.993 gold.</b> A definição de uma partida perfeita para um mid laner.</div>
+          <div class="hf-stats"><span class="hf-stat gld">10/0/14</span><span class="hf-stat pos">0 mortes</span><span class="hf-stat pos">22.993 gold</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-card tier-bad">
+      <div class="hf-card-inner">
+        <div style="font-size:2rem;flex-shrink:0;width:52px;text-align:center">⚰️</div>
+        <div class="hf-body">
+          <div class="hf-headline">ACE MORRE <span>16 VEZES</span> COMO WARLOCK</div>
+          <div class="hf-subline">P2 · Um Esquerdista no Pedaço · 2/16/4</div>
+          <div class="hf-text">Warlock é um herói de suporte que fica no fundo. Ace como Warlock foi pro front. 16 mortes em uma única partida — <b>uma morte a cada 2 minutos de jogo</b>. O time perdeu de 33×9 e Ace contribuiu com 16 das 9 mortes do lado deles. Os números não mentem: <b>isso foi histórico.</b></div>
+          <div class="hf-stats"><span class="hf-stat neg">2/16/4</span><span class="hf-stat neg">Recorde de mortes</span><span class="hf-stat neg">1 morte/2min</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hf-divider">// — TODOS MERECEM SER LEMBRADOS — //</div>
+
+    <div class="hf-section" style="color:#c0c0c0">🎖️ MENÇÕES HONROSAS</div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🧠</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>NETONETO</span> — O CAPITÃO DE FATO</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "De fato" porque o título não é oficial — ninguém o elegeu. Mas nos números e na presença, NetoNeto sempre esteve onde o jogo precisava. Capitão de fato é quem lidera pelo exemplo, não pela patente.</div>
+        <div class="hf-subline">3 partidas · 2 vitórias · KD 1.85 · presença absoluta</div>
+        <div class="hf-text">Se existe uma espinha dorsal nesse torneio, o nome dela é NetoNeto. Zerou mortes na P2 como Kunkka — <b>10/0/14 e 22.993 gold</b>. Na P1: 10/5/23. Mesmo nas derrotas nunca desaparece. <b>Liderança que não se mede em KD, se mede em presença.</b> O TIME 4 é construído em volta dele.</div>
+        <div class="hf-stats"><span class="hf-stat pos">10/0/14 na P2</span><span class="hf-stat neu">2V em 3J</span><span class="hf-stat pos">KD 1.85</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🔮</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>MAGO</span> — 74 ASSISTÊNCIAS E INVICTO</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "74 assistências" destaca o que normalmente passa despercebido: Mago não mata, mas está presente em cada kill do time. "Invicto" é o dado mais simples — 3 jogos, 3 vitórias — que resume tudo sem precisar explicar.</div>
+        <div class="hf-subline">3 partidas · 3 vitórias · 74 assists totais</div>
+        <div class="hf-text">Mago não brilha em kills. Mas <b>74 assistências em 3 jogos</b> dizem que estava em cada teamfight. P5: <b>7/4/31</b>. P3: 12/3/16. P6: 3/8/27 — 27 assists mesmo com 8 mortes. Invicto, essencial, subestimado. <b>O coração do TIME 3.</b></div>
+        <div class="hf-stats"><span class="hf-stat pos">3V em 3J</span><span class="hf-stat bb">74 assists totais</span><span class="hf-stat pos">12/3/16 na P3</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🌿</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>NANDINHO</span> — 3 VITÓRIAS, 67 ASSISTS, ZERO CRÉDITO</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Zero crédito" é uma provocação irônica: os números são excelentes, mas Nandinho raramente é mencionado quando se fala dos destaques. A frase questiona por que jogadores de suporte com resultados sólidos ficam na sombra dos carries.</div>
+        <div class="hf-subline">3 partidas · 3 vitórias · o suporte esquecido</div>
+        <div class="hf-text">Todo mundo fala de Zelezin e Ori. Mas <b>Nandinho também foi invicto</b>. 67 assistências totais. P5: 2/5/28 — <b>28 assists</b>. P6: 4/10/27. Morreu 10 vezes na P6 e o time venceu de qualquer forma. <b>O suporte que ninguém agradece mas todo time precisa.</b></div>
+        <div class="hf-stats"><span class="hf-stat pos">3V em 3J</span><span class="hf-stat bb">67 assists totais</span><span class="hf-stat neu">28 assists P5</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">💪</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>GUAIA</span> — O OFFLANER QUE GANHOU LANES</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Ganhou lanes" é um termo técnico de Dota — significa dominar a fase inicial da partida na sua rota. Guaia fez exatamente isso na P1 e P2: números positivos, pouca morte, farm alto. É o reconhecimento de um papel difícil bem executado.</div>
+        <div class="hf-subline">3 partidas · 2 vitórias · 27k gold P1</div>
+        <div class="hf-text">P1 como Dawnbreaker: <b>13/6/24 — 27.418 de gold</b>. Um dos maiores individuais da partida. P2: <b>9/1/10</b> como Death Prophet — 1 única morte. Quando venceu foi decisivo. Na P3 enfrentou o quinteto invicto — ninguém sobrevive a isso. <b>Guaia não perdeu por falta de esforço.</b></div>
+        <div class="hf-stats"><span class="hf-stat pos">13/6/24 na P1</span><span class="hf-stat gld">27.418 gold P1</span><span class="hf-stat pos">9/1/10 na P2</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🔗</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>LELITO</span> — 60 ASSISTS, O LINK INVISÍVEL</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Link invisível" descreve o papel do suporte que conecta o time sem aparecer nas estatísticas principais. 60 assists provam que Lelito estava em todo lugar — mas como suporte, raramente leva o kill. Invisível nos holofotes, essencial no jogo.</div>
+        <div class="hf-subline">3 partidas · 2 vitórias · suporte consistente</div>
+        <div class="hf-text">Lelito não vai aparecer no top de kills. Mas <b>60 assistências</b> revelam um suporte que conecta o time em cada fight. P1: <b>6/7/32 como Shadow Shaman</b> — 32 assists. P2: 2/3/21 como Vengeful Spirit. <b>O suporte que ninguém vê. Mas que todos precisam.</b></div>
+        <div class="hf-stats"><span class="hf-stat bb">60 assists totais</span><span class="hf-stat neu">32 assists P1</span><span class="hf-stat pos">2V em 3J</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🎯</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>RIKITO</span> — UM JOGO PERFEITO, DOIS ESQUECÍVEIS</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> A frase resume literalmente a trajetória: na P4, Rikito foi brilhante — 14/1/15. Nas outras duas partidas, sumiu. "Esquecíveis" não é crueldade, é realidade: performances que não deixam rastro na memória de quem assistiu.</div>
+        <div class="hf-subline">3 partidas · 1 vitória · melhor jogo: 14/1/15</div>
+        <div class="hf-text">Na P4, Rikito surgiu do nada: <b>14/1/15 — 16.578 de gold</b>. Liderou o TIME 1 em kills e morreu apenas 1 vez. Melhor performance individual do TIME 1 no torneio inteiro. Nas outras duas? Apagado. <b>Rikito tem potencial. Só precisa entregar mais vezes.</b></div>
+        <div class="hf-stats"><span class="hf-stat pos">14/1/15 na P4</span><span class="hf-stat gld">16.578 gold P4</span><span class="hf-stat neg">Desapareceu nas outras</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">⚡</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>TUTU</span> — A REDENÇÃO DA P4</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Redenção" porque Tutu começou o torneio com 12 mortes na P1 — um começo traumático. A P4 foi sua chance de se redimir, e ele aproveitou: 10/1/12. Em narrativa esportiva, redenção é quando o atleta responde na prática ao fracasso anterior.</div>
+        <div class="hf-subline">3 partidas · 1 vitória · P4: 10/1/12</div>
+        <div class="hf-text">Na P1, Tutu tomou 12 mortes como Doom — foi o símbolo da derrota. Mas na P4 reagiu com força: <b>10/1/12 — 16.931 de gold</b>. Uma reviravolta pessoal dentro do mesmo torneio. <b>Tutu aprendeu com a derrota. Na hora que importava, mostrou que sabia jogar.</b></div>
+        <div class="hf-stats"><span class="hf-stat pos">10/1/12 na P4</span><span class="hf-stat gld">16.931 gold P4</span><span class="hf-stat neg">5/12/10 na P1</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🎲</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>DZ1</span> — VÍTIMA DAS CIRCUNSTÂNCIAS</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Vítima das circunstâncias" significa que o problema não foi a performance individual, mas o contexto — times desequilibrados, sorteios desfavoráveis, adversários invictos. DZ1 jogou razoavelmente bem; o que falhou foi o entorno, não o jogador.</div>
+        <div class="hf-subline">3 partidas · 1 vitória · os números sugerem mais</div>
+        <div class="hf-text">P4: <b>4/3/19</b> — 19 assists numa vitória relâmpago de 29 minutos. Contribuiu quando o time precisou. Na P1 e P5 estava no TIME 1 que perdeu; na P3 enfrentou o quinteto invicto. <b>DZ1 nunca teve sorte no sorteio. Os números sugerem um jogador melhor do que o resultado mostra.</b></div>
+        <div class="hf-stats"><span class="hf-stat pos">4/3/19 na P4</span><span class="hf-stat neu">19 assists P4</span><span class="hf-stat neg">Sorteio cruel</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🥔</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>BATATA</span> — SEMPRE PRESENTE, NUNCA DECISIVO</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Sempre presente" reconhece a consistência — Batata aparece nos números em todos os jogos. "Nunca decisivo" é honesto: nenhum jogo foi virado por causa de Batata. É o retrato do jogador que cumpre o papel mas não muda o resultado sozinho.</div>
+        <div class="hf-subline">3 partidas · 1 vitória · 50 assists</div>
+        <div class="hf-text">50 assistências em 3 jogos. Batata está sempre lá. P4: <b>6/6/24</b> — participou ativamente da vitória. Nas derrotas, morreu demais. Nunca liderou, nunca afundou completamente. <b>O nome define: sólido, sem glamour, presente. O jogador que cumpre o que é pedido sem surpreender.</b></div>
+        <div class="hf-stats"><span class="hf-stat bb">50 assists totais</span><span class="hf-stat neu">6/6/24 na P4</span><span class="hf-stat neg">24 mortes em 3J</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">🌪️</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>DOIDÃO</span> — TALENTO REAL, TIME ERRADO</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Talento real" vem da P6: 14/8/22 e 21.666 gold numa partida de 49 minutos — números que poucos atingiram no torneio. "Time errado" porque esse talento nunca foi suficiente para virar o jogo. O problema não foi o jogador — foi a estrutura ao redor dele.</div>
+        <div class="hf-subline">3 partidas · 0 vitórias · mas a P6 revelou o potencial</div>
+        <div class="hf-text">0 vitórias. Mas na P6 numa batalha épica de 49 minutos: <b>14/8/22 — 21.666 gold</b>. Um dos maiores individuais da partida. Na P2: 1/9/5 como Tidehunter — horrível. A inconsistência é o seu maior inimigo. <b>Doidão é melhor do que o placar sugere. Precisa do time certo para provar.</b></div>
+        <div class="hf-stats"><span class="hf-stat neg">0V em 3J</span><span class="hf-stat pos">14/8/22 na P6</span><span class="hf-stat gld">21.666 gold P6</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">👻</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>xTK</span> — O FANTASMA DO TORNEIO</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Fantasma" em dois sentidos: primeiro, porque xTK aparece e some — presente fisicamente mas com impacto próximo de zero em vários momentos. Segundo, porque como Hard Carry, sua função é ser a ameaça principal — e um carry fantasma é o pesadelo de qualquer time.</div>
+        <div class="hf-subline">3 partidas · 0 vitórias · impacto inconsistente</div>
+        <div class="hf-text">xTK esteve em 3 jogos. Na P4: <b>6/5/2</b> — 6 kills mas <b>apenas 2 assists</b>. Em Dota, 2 assists significa que o carry estava isolado do time. Na P6: 3/12/22 — 22 assists mas 12 mortes. <b>xTK oscila entre invisível e presente-mas-ineficaz. O torneio esperava mais do Hard Carry.</b></div>
+        <div class="hf-stats"><span class="hf-stat neg">0V em 3J</span><span class="hf-stat neg">2 assists na P4</span><span class="hf-stat neg">12 mortes P6</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-card tier-b"><div class="hf-card-inner">
+      <div style="font-size:1.8rem;flex-shrink:0;width:52px;text-align:center">📦</div>
+      <div class="hf-body">
+        <div class="hf-headline"><span>DOUGZ</span> — A EVOLUÇÃO QUE CHEGOU TARDE</div>
+        <div class="hf-explain"><strong>// Por que esse título?</strong> "Chegou tarde" porque a melhora de Dougz ao longo do torneio é visível nos dados — de 5.815 gold na P2 para 27 assists na P6. Mas essa evolução não coincidiu com vitórias. Ótimo sinal para o futuro; infeliz para o presente.</div>
+        <div class="hf-subline">3 partidas · 0 vitórias · melhorou a cada jogo</div>
+        <div class="hf-text">P2: <b>1/4/5 — 5.815 gold</b> — um dos piores individuais do evento. P6, 49 minutos depois: <b>4/7/27 — 27 assists</b>. Dougz evoluiu claramente ao longo do torneio. O problema: o time nunca venceu. <b>Dougz melhorou. Os resultados simplesmente não acompanharam. 0 vitórias em 3 jogos — injusto? Talvez.</b></div>
+        <div class="hf-stats"><span class="hf-stat neg">0V em 3J</span><span class="hf-stat pos">27 assists P6</span><span class="hf-stat neu">Evoluiu no torneio</span></div>
+      </div>
+    </div></div>
+
+    <div class="hf-divider">// — 20 JOGADORES · 6 PARTIDAS · TODAS AS HISTÓRIAS CONTADAS — //</div>
+  `;
+}
+
+function renderAllResults() {
+  const all = results;
+  const f1  = all.filter(r => r.phase === 1);
+  const f2  = all.filter(r => r.phase === 2);
+
+  // ── GERAL ──
+  const geralStats = calcStatsFrom(all, teams);
+  const f1Stats    = calcStatsFrom(f1, teams);
+  const f2Stats    = calcStatsFrom(f2, teams);
+
+  // Champion banner
+  renderHighlights();
+
+  if(all.length === 8) {
+    const champ = geralStats[0];
+    document.getElementById('champion-banner').style.display = 'block';
+    document.getElementById('champion-name').textContent = champ.name;
+    const e = ELENCOS.find(x=>x.id===champ.id);
+    document.getElementById('champion-players').textContent = e ? e.f1.join(' · ') : '';
+  }
+
+  // Podium
+  document.getElementById('podium-wrap').innerHTML = geralStats.map((t,i) => {
+    const e = ELENCOS.find(x=>x.id===t.id);
+    return `<div class="podium-card ${PODIUM_CLS[i]}">
+      <div class="podium-medal">${MEDALS[i]}</div>
+      <div class="podium-place">${['Campeão','Vice','3º Lugar','4º Lugar'][i]}</div>
+      <div class="podium-tname">${t.name}</div>
+      <div class="podium-pts">${t.pts}</div>
+      <div class="podium-record">${t.wins}V · ${t.losses}D</div>
+      <div class="podium-players">${e ? e.f1.join('<br>') : ''}</div>
+    </div>`;
+  }).join('');
+
+  // Standings geral (with F1/F2 breakdown cols)
+  document.getElementById('standingsBody').innerHTML = standingsRowsHTML(geralStats, t => {
+    const p1 = f1Stats.find(x=>x.id===t.id)?.pts ?? 0;
+    const p2 = f2Stats.find(x=>x.id===t.id)?.pts ?? 0;
+    return `<td class="stat center" style="color:rgba(55,138,221,0.8)">${p1}</td>
+            <td class="stat center" style="color:rgba(255,61,0,0.8)">${p2}</td>`;
+  });
+  document.getElementById('rrTable').innerHTML = rrTableHTML(all, teams);
+
+  // ── FASE 1 ──
+  document.getElementById('standings-f1').innerHTML = standingsRowsHTML(f1Stats, null);
+  document.getElementById('rr-f1').innerHTML = rrTableHTML(f1, teams);
+  document.getElementById('history-f1').innerHTML = matchHistoryHTML(f1);
+
+  // ── FASE 2 ──
+  document.getElementById('standings-f2').innerHTML = standingsRowsHTML(f2Stats, null);
+  document.getElementById('rr-f2').innerHTML = rrTableHTML(f2, teams);
+  document.getElementById('history-f2').innerHTML = matchHistoryHTML(f2);
+
+  // ── ADMIN ──
+  document.getElementById('matchHistory').innerHTML = matchHistoryHTML(all);
+}
+
+// ── ELENCO DATA ──────────────────────────────────────────────
+const ELENCOS = [
+  {
+    id: 0, name: "TIME 1",
+    f1: ["DZ1","Rikito","Tutu","Batata","Bonito"],
+    f2: ["NetoNeto","Rikito","Tutu","Batata","Bonito"],
+    subOut: "DZ1", subIn: "NetoNeto",
+    roles: ["Support 5","Hard Carry","Mid","Offlaner","Support 4"]
+  },
+  {
+    id: 1, name: "TIME 2",
+    f1: ["BigBoss","xTK","Doidão","Dougz","Ace"],
+    f2: ["Venta","xTK","Doidão","Dougz","Ace"],
+    subOut: "BigBoss", subIn: "Venta",
+    roles: ["Support 5","Hard Carry","Mid","Offlaner","Support 4"]
+  },
+  {
+    id: 2, name: "TIME 3",
+    f1: ["Venta","Zelezin","Mago","Ori","Nandinho"],
+    f2: ["BigBoss","Zelezin","Mago","Ori","Nandinho"],
+    subOut: "Venta", subIn: "BigBoss",
+    roles: ["Support 5","Hard Carry","Mid","Offlaner","Support 4"]
+  },
+  {
+    id: 3, name: "TIME 4",
+    f1: ["NetoNeto","RDG","Guaia","Lelito","RZ1"],
+    f2: ["DZ1","RDG","Guaia","Lelito","RZ1"],
+    subOut: "NetoNeto", subIn: "DZ1",
+    roles: ["Support 5","Hard Carry","Mid","Offlaner","Support 4"]
+  }
+];
+
+function tooltipHTML(teamId) {
+  const e = ELENCOS.find(x => x.id === teamId);
+  if (!e) return '';
+  const f1rows = e.f1.map((p,i) => {
+    const cls = p === e.subOut ? 'out' : '';
+    return `<div class="tt-player ${cls}">${p}<span style="font-size:0.6rem;opacity:0.5">${e.roles[i]}</span></div>`;
+  }).join('');
+  const f2rows = e.f2.map((p,i) => {
+    const cls = p === e.subIn ? 'in' : '';
+    return `<div class="tt-player ${cls}">${p}<span style="font-size:0.6rem;opacity:0.5">${e.roles[i]}</span></div>`;
+  }).join('');
+  return `<div class="tt-box">
+    <div class="tt-team">${e.name}</div>
+    <div class="tt-phase">Fase 1</div>${f1rows}
+    <div class="tt-phase">Fase 2 — <span style="color:#ff4c4c">⬅ ${e.subOut}</span> → <span style="color:#4cff7a">➜ ${e.subIn}</span></div>${f2rows}
+  </div>`;
+}
+
+function wrapWithTooltip(teamName, teamId) {
+  return `<span class="tt-wrap">${teamName}${tooltipHTML(teamId)}</span>`;
+}
+
+function renderElencos() {
+  const cont = document.getElementById('elencos-content');
+  if (cont.innerHTML.trim()) return; // already rendered
+
+  cont.innerHTML = `<div class="elencos-grid">` +
+    ELENCOS.map(e => {
+      const f1rows = e.f1.map((p, i) => {
+        const isOut = p === e.subOut;
+        return `<div class="elenco-player">
+          <div>
+            <div class="elenco-player-name ${isOut ? 'subbed-out' : ''}">${p}</div>
+            <div class="elenco-player-role">${e.roles[i]}</div>
+          </div>
+          ${isOut ? '<span class="sub-tag out">⬅ saiu</span>' : ''}
+        </div>`;
+      }).join('');
+
+      const f2rows = e.f2.map((p, i) => {
+        const isIn = p === e.subIn;
+        return `<div class="elenco-player">
+          <div>
+            <div class="elenco-player-name ${isIn ? 'subbed-in' : ''}">${p}</div>
+            <div class="elenco-player-role">${e.roles[i]}</div>
+          </div>
+          ${isIn ? '<span class="sub-tag inn">➜ entrou</span>' : ''}
+        </div>`;
+      }).join('');
+
+      return `<div class="elenco-card">
+        <div class="elenco-header">
+          <div class="elenco-team-name">${e.name}</div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:3px;color:rgba(232,224,208,0.3)">5 JOGADORES</div>
+        </div>
+        <div class="elenco-phases">
+          <div class="elenco-phase">
+            <div class="elenco-phase-title">// Fase 1</div>
+            ${f1rows}
+          </div>
+          <div class="elenco-phase">
+            <div class="elenco-phase-title">// Fase 2</div>
+            ${f2rows}
+          </div>
+        </div>
+        <div class="elenco-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#ff4c4c"></div> saiu na F2</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#4cff7a"></div> entrou na F2</div>
+        </div>
+      </div>`;
+    }).join('') + `</div>`;
+}
+
 // INIT
-// Loading screen
+const SITE_VERSION = "v4"; // bump this whenever lineup changes
+if (localStorage.getItem("nonstop_version") !== SITE_VERSION) {
+  localStorage.clear();
+  localStorage.setItem("nonstop_version", SITE_VERSION);
+}
 (function() {
   const screen = document.getElementById("loading-screen");
   const bar = document.getElementById("loadingBar");
@@ -1698,6 +3093,12 @@ document.getElementById("heroBg").style.backgroundImage = `url(${DOTA_BG})`;
 loadState();
 initTeams();
 renderTeams();
+
+// Auto-load preset results if none saved
+if (results.length === 0) {
+  results = PRESET_RESULTS.map(r => ({ ...r }));
+  saveState();
+}
 
 // Pre-decode reveal sound on first interaction
 document.addEventListener('click', () => loadRevealSound(), { once: true });
