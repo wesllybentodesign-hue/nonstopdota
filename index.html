@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>NonStop: Cenário DOTA PE</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
@@ -1329,28 +1329,195 @@
   .tt-player.in  { color: #4cff7a; }
   .tt-player.out { color: rgba(255,76,76,0.6); text-decoration: line-through; }
 
-  @media (max-width: 700px) {
+
+  /* ═══════════════════════════════════════════
+     MOBILE — tudo abaixo de 768px
+  ═══════════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* ── NAV ── */
+    nav {
+      padding: 10px 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: rgba(0,0,0,0.97);
+    }
+    .nav-logo { font-size: 0.9rem; letter-spacing: 2px; }
+    .nav-tabs { gap: 3px; flex-wrap: wrap; }
+    .nav-tab {
+      padding: 5px 10px;
+      font-size: 0.65rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── HERO ── */
+    .corner { display: none; }
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0 20px;
+    }
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 1rem;
+      clip-path: none;
+    }
+    .hero-meta { font-size: 0.6rem; letter-spacing: 2px; padding: 0 16px; }
+
+    /* ── PAGES PADDING ── */
+    #page-teams   { padding: 80px 12px 40px; }
+    #page-elencos { padding-top: 80px; }
+    #page-elencos #elencos-content { padding: 0 12px 40px; }
+    #page-results > div { padding: 0 12px 40px; }
+
+    /* ── SECTION HEADERS ── */
+    .section-header { padding: 80px 12px 0; margin-bottom: 24px; }
+    .section-title { font-size: 2.2rem; }
+
+    /* ── TEAMS GRID ── */
+    .teams-grid { gap: 16px; }
+    .team-card-header { padding: 14px 16px 10px; }
+    .team-name { font-size: 1.3rem; }
+
+    /* ── PLAYERS STRIP — 2+3 layout ── */
+    .players-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .player-slot:nth-child(1),
+    .player-slot:nth-child(2) { border-bottom: 2px solid var(--black); }
+    .player-slot:nth-child(2) { border-right: none; }
+    .player-slot:nth-child(3),
+    .player-slot:nth-child(4),
+    .player-slot:nth-child(5) { border-top: none; }
+    .player-slot:nth-child(5) { border-right: none; }
+    .player-slot:nth-child(3):not(:nth-child(5)) { /* keep right border */ }
+
+    /* For 5 items in 2-col: last row has 3 items (3,4,5) */
+    .players-strip { grid-template-columns: repeat(3, 1fr); }
+    .player-slot { border-right: 2px solid var(--black); border-bottom: none; }
+    .player-slot:nth-child(3n) { border-right: none; }
+    .player-slot:nth-child(n+4) { border-top: 2px solid var(--black); }
+
+    .player-nick { font-size: 0.8rem; letter-spacing: 1px; }
+    .player-role { font-size: 0.5rem; letter-spacing: 1px; }
+    .player-label { padding: 7px 4px 9px; }
+    .medal-wrap { width: 28px; height: 28px; top: 4px; right: 4px; }
+
+    /* ── ELENCOS ── */
     .elencos-grid { grid-template-columns: 1fr; }
     .elenco-phases { grid-template-columns: 1fr; }
-    .elenco-phase:first-child { border-right: none; border-bottom: 1px solid rgba(232,224,208,0.06); }
+    .elenco-phase:first-child {
+      border-right: none;
+      border-bottom: 1px solid rgba(232,224,208,0.06);
+    }
+    .elenco-header { padding: 14px 16px 10px; }
+    .elenco-team-name { font-size: 1.4rem; }
+    .elenco-phase { padding: 12px 16px; }
+
+    /* ── RESULTS TABS ── */
+    #res-tabs { gap: 4px; }
+    .res-tab {
+      padding: 6px 10px;
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      clip-path: none;
+    }
+
+    /* ── PODIUM ── */
+    #podium-wrap {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 8px;
+    }
+    .podium-card { padding: 12px 8px; }
+    .podium-medal { font-size: 1.4rem; }
+    .podium-tname { font-size: 1rem; }
+    .podium-players { display: none; }
+
+    /* ── STANDINGS TABLE ── */
+    .standings-title, .rr-title, .match-input-title { padding: 14px 16px 10px; font-size: 1.1rem; }
+    table { font-size: 11px; }
+    thead th, tbody td { padding: 8px 6px; }
+
+    /* Hide F1/F2 breakdown cols on mobile */
+    .standings th:nth-child(6),
+    .standings th:nth-child(7),
+    .standings td:nth-child(6),
+    .standings td:nth-child(7) { display: none; }
+
+    /* ── RR TABLE ── */
+    .rr-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .rr-table table { min-width: 360px; font-size: 11px; }
+
+    /* ── ADMIN FORM ── */
+    .match-form-inner {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 14px 16px 0;
+    }
+    .vs-badge { display: none; }
+    .submit-row { padding: 12px 16px 0; flex-wrap: wrap; }
+
+    /* ── MATCH HISTORY ── */
+    .match-item { padding: 10px 14px; gap: 8px; }
+    .match-num { font-size: 0.6rem; min-width: 36px; }
+    .match-team { font-size: 0.85rem; }
+
+    /* ── HIGHLIGHTS ── */
+    .hl-grid  { grid-template-columns: 1fr 1fr; }
+    .hl-grid-2 { grid-template-columns: 1fr; }
+    .hl-section-title { font-size: 1.4rem; }
+    .hl-story { flex-direction: column; gap: 8px; }
+    .hl-story-icon { font-size: 1.4rem; }
+
+    /* ── HALL DA FAMA ── */
+    .hf-title { font-size: 2rem; }
+    .hf-card-inner {
+      flex-direction: column;
+      gap: 10px;
+      padding: 16px;
+    }
+    .hf-rank { font-size: 2rem; width: auto; text-align: left; }
+    .hf-number { font-size: 2.5rem; min-width: auto; text-align: left; }
+    .hf-number-label { text-align: left; }
+    .hf-section { font-size: 1rem; letter-spacing: 2px; }
+    .hf-headline { font-size: 1.1rem; }
+    .hf-text { font-size: 0.85rem; }
+    .hf-explain { font-size: 0.6rem; }
+    .hf-stats { gap: 5px; }
+    .hf-stat { font-size: 0.55rem; }
+
+    /* ── TOAST ── */
+    #toast {
+      font-size: 0.6rem;
+      padding: 10px 18px;
+      white-space: normal;
+      text-align: center;
+      max-width: 90vw;
+    }
+
+    /* ── CHAMPION BANNER ── */
+    #champion-banner { padding: 16px; }
+    #champion-name { font-size: 2rem; }
+
+    /* ── TOOLTIP — disable on mobile (touch) ── */
+    .tt-box { display: none !important; }
   }
 
-  @media (max-width: 700px) {
-    nav { padding: 12px 16px; }
-    .nav-logo { font-size: 1rem; }
-    .nav-tab { padding: 6px 12px; font-size: 0.75rem; letter-spacing: 1px; }
-    #page-teams, #page-results { padding: 80px 12px 40px; }
-    .corner { display: none; }
-    .match-form-inner { grid-template-columns: 1fr; }
-    .vs-badge { padding-bottom: 0; }
-    .players-strip { grid-template-columns: repeat(3, 1fr); }
-    .player-slot:nth-child(4),
-    .player-slot:nth-child(5) { border-top: 2px solid var(--black); }
-    .player-slot:nth-child(3) { border-right: none; }
-    .player-nick { font-size: 0.9rem; }
-    .player-role { font-size: 0.5rem; }
-    .team-name { font-size: 1.4rem; }
-    #toast { font-size: 0.65rem; padding: 12px 20px; }
+  /* Tiny phones */
+  @media (max-width: 380px) {
+    .nav-tab { padding: 4px 7px; font-size: 0.55rem; }
+    .res-tab { padding: 5px 7px; font-size: 0.55rem; }
+    .players-strip { grid-template-columns: repeat(2, 1fr) !important; }
+    .player-slot:nth-child(2n) { border-right: none; }
+    .player-slot:nth-child(n+3) { border-top: 2px solid var(--black); }
+    .player-slot:nth-child(3n) { border-right: 2px solid var(--black); }
+    .player-slot:nth-child(2n) { border-right: none !important; }
+    .hf-title { font-size: 1.6rem; }
+    .section-title { font-size: 1.8rem; }
   }
 
 </style>
@@ -1416,7 +1583,7 @@
     <div class="section-eyebrow">// elencos por fase</div>
     <div class="section-title">ELENCOS <span>COMPLETOS</span></div>
   </div>
-  <div id="elencos-content" style="max-width:1300px;margin:0 auto;padding:0 40px 60px;"></div>
+  <div id="elencos-content" style="max-width:1300px;margin:0 auto;padding:0 clamp(12px,4vw,40px) 60px;"></div>
 </div>
 
 <!-- RESULTS -->
@@ -1426,7 +1593,7 @@
     <div class="section-title">RESULTADOS <span>FINAIS</span></div>
   </div>
 
-  <div style="max-width:1000px;margin:0 auto;padding:0 40px 60px;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 clamp(12px,4vw,40px) 60px;">
 
     <!-- PHASE TABS -->
     <div id="res-tabs" style="display:flex;gap:6px;margin-bottom:28px;flex-wrap:wrap;">
